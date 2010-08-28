@@ -105,7 +105,7 @@ xui.extend({
         function hdl(){ 
             if(req.readyState==4) {
                 if(req.status===0 || req.status==200) req.handleResp(); 
-                if(req.status==500) req.handleError();
+                if(req.status>=400) req.handleError();
             }
         }
         if(async) req.onreadystatechange = hdl;
